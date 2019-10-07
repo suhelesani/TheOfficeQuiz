@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Suhel Esani</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  </head>
+
+
+  <body>
+
+
+
+<div class="parallax"></div>
+
+<div style="height:50px;background-color;font-size:36px">
+
+</div>
+
+<div class="container">
+  <h2>Your favorite type of paper..</h2>
+<label for="var_string"><input type="radio" name="variable" value="0" id="var_string" />Card stock </label>
+<label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Glossy paper</label>
+<label for="var_info"><input type="radio" name="variable" value="20" id="var_info" />Sand paper</label>
+<label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/>Rolling paper</label>
+
+<h2>How will you probably die?</h2>
+<label for="sub_string"><input type="radio" name="sub" value="20" id="sub_string"/>In your sleep</label>
+<label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>YOU'LL NEVER DIE!!!</label>
+<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Sugar overdose</label>
+<label for="sub_condition"><input type="radio" name="sub" value="0" id="sub_condition" />Alcohol poisoning</label>
+
+<h2>What got you in trouble in high school?</h2>
+<label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />Eating in class</label>
+<label for="cat_join"><input type="radio" name="con" value="20" id="cat_join" />Sleeping in class</label>
+<label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" />You never got in trouble</label>
+<label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Pulling pranks</label>
+
+<h2>Pick a career..</h2>
+<label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />Acting</label>
+<label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />CEO</label>
+<label for="if_info"><input type="radio" name="ifstate" value="0" id="if_info" />Bitcoin developer</label>
+<label for="if_condition"><input type="radio" name="ifstate"  value="20" id="if_condition" />Writer</label>
+
+<h2>What are you worst dealing with?</h2>
+<label for="new_string"><input type="radio" name="new" value="20" id="new_string" />Criticism </label>
+<label for="new_join"><input type="radio" name="new" value="0" id="new_join" />Stupidity</label>
+<label for="new_info"><input type="radio" name="new" value="0" id="new_info" />Rudeness</label>
+<label for="new_condition"><input type="radio" name="new"  value="0" id="new_condition" />Defeat</label>
+
+
+
+<button type="submit" id="submitBtn" value="Submit">Submit</button>
+
+<div class="responseView">
+  <p>You are... </p>
+<p id="grade2"></p>
+  </div>
+</div>
+
+
+
+<script>
+  $(document).ready(function() {
+    var inputVar = 0;
+    var inputSub = 0;
+    var inputCon = 0;
+    var ifstate = 0;
+    var inputNew = 0;
+    var result = 0;
+    var result2 = "";
+
+    $("#submitBtn").click(function() {
+      console.log("Performing Operations");
+
+    grading = [
+	   {score:0,feedback:"MICHAEL SCOTT", image: "michael.jpg"},
+	   {score:20,feedback:"DWIGHT SCHRUTE", image: "dwight.jpg"},
+	   {score:40,feedback:"TOBY FLENDERSON", image: "toby.jpg"},
+	   {score:60,feedback:"RYAN HOWARD.", image: "ryan.jpg"},
+	   {score:80,feedback:"ANGELA MARTIN", image: "angela.jpg"},
+     {score:100,feedback:"KELLY KAPOOR", image: "kelly.jpg"},
+	   ];
+
+
+      inputVar = $("input[name='variable']:checked").val() || 0;
+      inputSub = $("input[name='sub']:checked").val() || 0;
+      inputCon = $("input[name='con']:checked").val() || 0;
+      ifstate = $("input[name='ifstate']:checked").val() || 0;
+      inputNew = $("input[name='new']:checked").val() || 0;
+
+    var result = parseInt(inputVar) + parseInt(inputSub) + parseInt(inputCon) + parseInt(ifstate) + parseInt(inputNew);
+
+    $("span.grade").text(result);
+
+    for(i = 0; i < grading.length; i++) {
+      if(result === grading[i].score) {
+        result2 = grading[i].feedback + "<br /><img src='" + grading[i].image + "' width='300'  />";
+	    }
+	  }
+
+    $("#grade2").html(result2);
+
+    });
+
+  });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background-image: url("code.jpg");
+color: white;
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+
+.body-content p {
+  width: 60%;
+  margin: 70px auto 15px auto;
+}
+
+
+#menu {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  }
+
+
+#navbar{
+  color: 	#FFFFFF;
+}
+
+h1 {
+color: #7C5A37;
+font-size: 1.5rem;
+text-align: center;
+padding-top: 30px;
+}
+
+h2 {
+  color: #00c4cc;
+}
+
+p {
+line-height: 1.6;
+}
+
+.container {
+  padding: 20px 30px;
+}
+
+.responseView {
+  padding: 20px 5px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://cdn.glitch.com/e960a052-57b7-4e5a-904f-16b61fea6bfb%2FWha.png?v=1570332599428");
+
+  /* Set a specific height */
+  min-height: 800px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: fixed;
+  }
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
